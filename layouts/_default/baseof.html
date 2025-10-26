@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.subtitle }}{{ end }}">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        header {
+            border-bottom: 2px solid #4a5568;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        h1 {
+            color: #81c784;
+            margin: 0;
+            font-weight: 600;
+        }
+        h2, h3, h4, h5, h6 {
+            color: #a5d6a7;
+            font-weight: 500;
+        }
+        .subtitle {
+            color: #9e9e9e;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 1.5rem;
+        }
+        nav a {
+            color: #81c784;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            color: #a5d6a7;
+            border-bottom-color: #81c784;
+        }
+        main {
+            margin: 2rem 0;
+        }
+        .post-meta {
+            color: #9e9e9e;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-list li {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #242424;
+            transition: all 0.2s ease;
+        }
+        .post-list li:hover {
+            background-color: #2a2a2a;
+            border-color: #4a5568;
+        }
+        .post-title {
+            margin: 0 0 0.5rem 0;
+        }
+        .post-title a {
+            color: #81c784;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .post-title a:hover {
+            color: #a5d6a7;
+        }
+        footer {
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9e9e9e;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #81c784;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #a5d6a7;
+        }
+        code {
+            background-color: #2d2d2d;
+            color: #c9c9c9;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #c9c9c9;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #404040;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #81c784;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            color: #b0b0b0;
+            background-color: #242424;
+            padding: 1rem 1rem 1rem 1.5rem;
+            border-radius: 4px;
+        }
+        a {
+            color: #81c784;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #a5d6a7;
+        }
+        /* Better readability for paragraphs */
+        p {
+            margin-bottom: 1.2rem;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Focus states for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #81c784;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ .Site.BaseURL }}" style="color: inherit; text-decoration: none;">{{ .Site.Title }}</a></h1>
+        {{ if .Site.Params.subtitle }}
+        <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+        {{ end }}
+        {{ if .Site.Menus.main }}
+        <nav>
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+        {{ end }}
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+        {{ if .Site.Params.contact.email }}
+        <p>Contact: <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a></p>
+        {{ end }}
+    </footer>
+</body>
+</html>

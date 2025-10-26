@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ if .IsHome }}
+<h1>Welcome to {{ .Site.Title }}</h1>
+{{ if .Site.Params.subtitle }}
+<p class="subtitle">{{ .Site.Params.subtitle }}</p>
+{{ end }}
+{{ end }}
+
+{{ if .Title }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+
+{{ .Content }}
+
+{{ $pages := where .Site.RegularPages "Type" "posts" }}
+{{ if $pages }}
+<h2>Recent Posts</h2>
+<ul class="post-list">
+    {{ range first 10 $pages }}
+    <li>
+        <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
+        {{ if .Summary }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}

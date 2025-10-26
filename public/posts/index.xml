@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Tech Spider</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Tech Spider</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;p&gt;Welcome to my personal blog! This is my first post on &lt;strong&gt;Tech Spider&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m excited to share my thoughts on technology, engineering, and software development.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-to-expect&#34;&gt;What to Expect&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Technical tutorials and guides&lt;/li&gt;&#xA;&lt;li&gt;Engineering insights&lt;/li&gt;&#xA;&lt;li&gt;Project showcases&lt;/li&gt;&#xA;&lt;li&gt;Tech industry commentary&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stay tuned for more content!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
