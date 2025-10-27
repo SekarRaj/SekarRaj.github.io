@@ -19,7 +19,23 @@
     {{ range first 10 $pages }}
     <li>
         <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
+        <div class="post-meta">
+            {{ .Date.Format "January 2, 2006" }}
+            {{ if .Params.categories }}
+            | Category: 
+            {{ range $index, $category := .Params.categories }}
+                {{ if $index }}, {{ end }}
+                <a href="/categories/{{ $category | urlize }}">{{ $category | title }}</a>
+            {{ end }}
+            {{ end }}
+            {{ if .Params.tags }}
+            | Tags: 
+            {{ range $index, $tag := .Params.tags }}
+                {{ if $index }}, {{ end }}
+                <a href="/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+            {{ end }}
+            {{ end }}
+        </div>
         {{ if .Summary }}
         <p>{{ .Summary }}</p>
         {{ end }}
