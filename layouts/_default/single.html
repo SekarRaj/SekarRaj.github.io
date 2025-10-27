@@ -3,6 +3,20 @@
 {{ if .Date }}
 <div class="post-meta">
     Published on {{ .Date.Format "January 2, 2006" }}
+    {{ if .Params.categories }}
+    | Category: 
+    {{ range $index, $category := .Params.categories }}
+        {{ if $index }}, {{ end }}
+        <a href="/categories/{{ $category | urlize }}">{{ $category | title }}</a>
+    {{ end }}
+    {{ end }}
+    {{ if .Params.tags }}
+    | Tags: 
+    {{ range $index, $tag := .Params.tags }}
+        {{ if $index }}, {{ end }}
+        <a href="/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+    {{ end }}
+    {{ end }}
 </div>
 {{ end }}
 <div class="content">

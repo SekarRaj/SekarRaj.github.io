@@ -8,6 +8,10 @@ title = 'Tech Spider'
     email = 'sekar_raj@hotmail.com'
     phone = ''
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
 [menu]
   [[menu.main]]
     name = "Home"
@@ -17,6 +21,10 @@ title = 'Tech Spider'
     name = "Posts"
     url = "/posts/"
     weight = 2
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
 
 [markup]
   [markup.goldmark]
