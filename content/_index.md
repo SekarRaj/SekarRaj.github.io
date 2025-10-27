@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-Welcome to **Tech Spider** - where technology meets creativity! 
+Welcome to **Engineering Insights** - where technology meets creativity! 
 
 I'm passionate about software engineering, technology innovation, and sharing knowledge with the developer community.
 
@@ -12,7 +12,6 @@ This blog covers:
 - **Software Development**: Best practices, tutorials, and insights
 - **Technology Trends**: Analysis of emerging technologies
 - **Engineering Solutions**: Problem-solving approaches and case studies
-- **Career Growth**: Tips for developers and engineers
 
 ## Get In Touch
 
