@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Engineering Insights</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Engineering Insights</description>
+    <title>Economics on Engineering Insights</title>
+    <link>http://localhost:1313/tags/economics/</link>
+    <description>Recent content in Economics on Engineering Insights</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Association Rule Mining</title>
-      <link>http://localhost:1313/posts/association_rule_mining/</link>
-      <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
-      <guid>http://localhost:1313/posts/association_rule_mining/</guid>
-      <description>&lt;p&gt;Association Rule Mining&lt;/p&gt;&#xA;&lt;p&gt;Upsupervised machine learning to identify patterns and dependencies&lt;/p&gt;&#xA;&lt;p&gt;Use - Recommendation systems, basket analysis and symptom to disease associatiom&lt;/p&gt;&#xA;&lt;p&gt;Cons - Not efficient for large datasets&lt;/p&gt;&#xA;&lt;p&gt;Sequential pattern mining - PrefixSpan and SPADE&lt;/p&gt;</description>
-    </item>
+    <atom:link href="http://localhost:1313/tags/economics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Division of labor</title>
       <link>http://localhost:1313/posts/division_of_labour/</link>

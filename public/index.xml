@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Tech Spider</title>
+    <title>Home on Engineering Insights</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Tech Spider</description>
+    <description>Recent content in Home on Engineering Insights</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <title>Association Rule Mining</title>
+      <link>http://localhost:1313/posts/association_rule_mining/</link>
       <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
-      <description>&lt;p&gt;Welcome to my personal blog! This is my first post on &lt;strong&gt;Tech Spider&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m excited to share my thoughts on technology, engineering, and software development.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-to-expect&#34;&gt;What to Expect&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Technical tutorials and guides&lt;/li&gt;&#xA;&lt;li&gt;Engineering insights&lt;/li&gt;&#xA;&lt;li&gt;Project showcases&lt;/li&gt;&#xA;&lt;li&gt;Tech industry commentary&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stay tuned for more content!&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/association_rule_mining/</guid>
+      <description>&lt;p&gt;Association Rule Mining&lt;/p&gt;&#xA;&lt;p&gt;Upsupervised machine learning to identify patterns and dependencies&lt;/p&gt;&#xA;&lt;p&gt;Use - Recommendation systems, basket analysis and symptom to disease associatiom&lt;/p&gt;&#xA;&lt;p&gt;Cons - Not efficient for large datasets&lt;/p&gt;&#xA;&lt;p&gt;Sequential pattern mining - PrefixSpan and SPADE&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Division of labor</title>
+      <link>http://localhost:1313/posts/division_of_labour/</link>
+      <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
+      <guid>http://localhost:1313/posts/division_of_labour/</guid>
+      <description>&lt;p&gt;Adam smith and dvivision of labout!&lt;/p&gt;&#xA;&lt;p&gt;The father of economics, Adam Smith, coined the phrase &amp;lsquo;Division of labour&amp;rsquo;. The concept means to use specialization of roles such that each individual is specialized in the portion of the job and working together they create a well defined product that serves the original intended use of the product. In his example of the pin factory 10 individuals work in unision with varying expertise and create an approximate 48000 pins per day. He contrasts this with the fact that of if the works performed all the work themselves then would create 20 pin per day.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
