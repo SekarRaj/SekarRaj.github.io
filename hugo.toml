@@ -1,12 +1,16 @@
 baseURL = "https://SekarRaj.github.io/"
 languageCode = 'en-us'
-title = 'Tech Spider'
+title = 'Engineering Insights'
 
 [params]
   subtitle = 'The art of engineering'
   [params.contact]
     email = 'sekar_raj@hotmail.com'
     phone = ''
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 [menu]
   [[menu.main]]
@@ -17,6 +21,10 @@ title = 'Tech Spider'
     name = "Posts"
     url = "/posts/"
     weight = 2
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
 
 [markup]
   [markup.goldmark]

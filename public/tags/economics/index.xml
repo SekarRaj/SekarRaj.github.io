@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economics on Engineering Insights</title>
+    <link>http://localhost:1313/tags/economics/</link>
+    <description>Recent content in Economics on Engineering Insights</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/economics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Division of labor</title>
+      <link>http://localhost:1313/posts/division_of_labour/</link>
+      <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
+      <guid>http://localhost:1313/posts/division_of_labour/</guid>
+      <description>&lt;p&gt;Adam smith and dvivision of labout!&lt;/p&gt;&#xA;&lt;p&gt;The father of economics, Adam Smith, coined the phrase &amp;lsquo;Division of labour&amp;rsquo;. The concept means to use specialization of roles such that each individual is specialized in the portion of the job and working together they create a well defined product that serves the original intended use of the product. In his example of the pin factory 10 individuals work in unision with varying expertise and create an approximate 48000 pins per day. He contrasts this with the fact that of if the works performed all the work themselves then would create 20 pin per day.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
