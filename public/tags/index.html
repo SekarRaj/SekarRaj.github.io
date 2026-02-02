@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tags - Engineering Insights</title>
+    <title>Tags - Engineer&#39;s Journal</title>
     <meta name="description" content="The art of engineering">
     <style>
         body {
@@ -161,7 +161,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="http://localhost:1313/" style="color: inherit; text-decoration: none;">Engineering Insights</a></h1>
+        <h1><a href="http://localhost:1313/" style="color: inherit; text-decoration: none;">Engineer&#39;s Journal</a></h1>
         
         <p class="subtitle">The art of engineering</p>
         
@@ -196,6 +196,38 @@
 <ul class="post-list">
     
     <li>
+        <h3 class="post-title"><a href="http://localhost:1313/posts/temporal_tables/">Versioned State Machine</a></h3>
+        <div class="post-meta">
+            January 30, 2026
+            
+            | Category: 
+            
+                
+                <a href="/categories/databases">Databases</a>
+            
+                , 
+                <a href="/categories/design">Design</a>
+            
+            
+            
+            | Tags: 
+            
+                
+                <a href="/tags/versioned-tables">versioned tables</a>
+            
+                , 
+                <a href="/tags/temporal-tables">temporal tables</a>
+            
+            
+        </div>
+        
+        <p><p>The Versioned State Machine</p>
+<p>In a typical CRUD application, an update is a simple overwrite. But in high-compliance environments, an update is a journey. Recently, I tackled a requirement where a domain record governed by a state machine needed to maintain multiple versions simultaneously.</p>
+<p>The challenge arises when an update isn&rsquo;t immediately &ldquo;authoritative.&rdquo; Instead, the new version must navigate a series of states—often involving external system handshakes—before it can replace the previous version in the user&rsquo;s primary view.</p></p>
+        
+    </li>
+    
+    <li>
         <h3 class="post-title"><a href="http://localhost:1313/posts/association_rule_mining/">Association Rule Mining</a></h3>
         <div class="post-meta">
             October 26, 2025
@@ -227,6 +259,30 @@
     </li>
     
     <li>
+        <h3 class="post-title"><a href="http://localhost:1313/posts/compressions/">Database Storage Compression</a></h3>
+        <div class="post-meta">
+            October 26, 2025
+            
+            | Category: 
+            
+                
+                <a href="/categories/databases">Databases</a>
+            
+            
+            
+            | Tags: 
+            
+                
+                <a href="/tags/database-storage-compressions">database-storage-compressions</a>
+            
+            
+        </div>
+        
+        <p><h3 id="dictionary-compressions">Dictionary compressions</h3></p>
+        
+    </li>
+    
+    <li>
         <h3 class="post-title"><a href="http://localhost:1313/posts/division_of_labour/">Division of labor</a></h3>
         <div class="post-meta">
             October 26, 2025
@@ -241,9 +297,6 @@
             | Tags: 
             
                 
-                <a href="/tags/economics">economics</a>
-            
-                , 
                 <a href="/tags/software-engineering">software-engineering</a>
             
                 , 
@@ -252,8 +305,46 @@
             
         </div>
         
-        <p><p>Adam smith and dvivision of labout!</p>
-<p>The father of economics, Adam Smith, coined the phrase &lsquo;Division of labour&rsquo;. The concept means to use specialization of roles such that each individual is specialized in the portion of the job and working together they create a well defined product that serves the original intended use of the product. In his example of the pin factory 10 individuals work in unision with varying expertise and create an approximate 48000 pins per day. He contrasts this with the fact that of if the works performed all the work themselves then would create 20 pin per day.</p></p>
+        <p><h3 id="specialists-and-generalists">Specialists and generalists</h3>
+<p>The father of economics, Adam Smith, coined the phrase &lsquo;Division of labour&rsquo;. The concept means to use specialization of roles such that each individual is specialized in a portion of the job and working together they create a well-defined product that serves the original intended use of the product. In his example of the pin factory, 10 individuals work in unison with varying expertise and create approximately 48,000 pins per day. He contrasts this with the fact that if the worker performed all the work themselves, then they would create 20 pins per day.</p></p>
+        
+    </li>
+    
+    <li>
+        <h3 class="post-title"><a href="http://localhost:1313/posts/storage-models/">Storage models in database</a></h3>
+        <div class="post-meta">
+            October 26, 2025
+            
+            | Category: 
+            
+                
+                <a href="/categories/databases">Databases</a>
+            
+            
+            
+            | Tags: 
+            
+                
+                <a href="/tags/database-storage-models">database-storage-models</a>
+            
+            
+        </div>
+        
+        <p><h3 id="database-storage-models">Database storage models</h3>
+<p>Depending on the type of access method, the database storage model could be one of the following.</p>
+<ul>
+<li>N-ary Storage Model (NSM) or Row storage</li>
+<li>Decomposition Storage Model (DSM) or Column storage</li>
+<li>Hybrid Storage Model (PAX) - Mix of Row and Storage</li>
+</ul>
+<h3 id="row-storage">Row Storage</h3>
+<p>Based on block oriented storage</p>
+<p>Slotted Page Array
+Indexed Storage.      (Clustering)
+LSM Trees</p>
+<h3 id="column-store">Column Store</h3>
+<p>Separate page per attribute
+Attributes and meta-data stored in separate arrays of physical length</p></p>
         
     </li>
     
@@ -263,7 +354,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Engineering Insights. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+        <p>&copy; 2026 Engineer&#39;s Journal. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
         
         <p>Contact: <a href="mailto:sekar_raj@hotmail.com">sekar_raj@hotmail.com</a></p>
         

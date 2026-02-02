@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-Welcome to **Engineering Insights** - where technology meets creativity! 
+Welcome to **Engineer's Journel** - problems encountered architecting solutions! 
 
 I'm passionate about software engineering, technology innovation, and sharing knowledge with the developer community.
 

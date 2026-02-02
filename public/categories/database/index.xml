@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Engineering Insights</title>
+    <link>http://localhost:1313/categories/database/</link>
+    <description>Recent content in Database on Engineering Insights</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Versioned State Machine</title>
+      <link>http://localhost:1313/posts/temporal_tables/</link>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/temporal_tables/</guid>
+      <description>&lt;p&gt;The Versioned State Machine&lt;/p&gt;&#xA;&lt;p&gt;In a typical CRUD application, an update is a simple overwrite. But in high-compliance environments, an update is a journey. Recently, I tackled a requirement where a domain record governed by a state machine needed to maintain multiple versions simultaneously.&lt;/p&gt;&#xA;&lt;p&gt;The challenge arises when an update isn&amp;rsquo;t immediately &amp;ldquo;authoritative.&amp;rdquo; Instead, the new version must navigate a series of states—often involving external system handshakes—before it can replace the previous version in the user&amp;rsquo;s primary view.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
