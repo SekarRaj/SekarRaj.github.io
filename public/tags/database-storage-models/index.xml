@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database-Storage-Models on Engineer&#39;s Journal</title>
+    <link>http://localhost:1313/tags/database-storage-models/</link>
+    <description>Recent content in Database-Storage-Models on Engineer&#39;s Journal</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/database-storage-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storage models in database</title>
+      <link>http://localhost:1313/posts/storage-models/</link>
+      <pubDate>Sun, 26 Oct 2025 01:47:46 -0700</pubDate>
+      <guid>http://localhost:1313/posts/storage-models/</guid>
+      <description>&lt;h3 id=&#34;database-storage-models&#34;&gt;Database storage models&lt;/h3&gt;&#xA;&lt;p&gt;Depending on the type of access method, the database storage model could be one of the following.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;N-ary Storage Model (NSM) or Row storage&lt;/li&gt;&#xA;&lt;li&gt;Decomposition Storage Model (DSM) or Column storage&lt;/li&gt;&#xA;&lt;li&gt;Hybrid Storage Model (PAX) - Mix of Row and Storage&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;row-storage&#34;&gt;Row Storage&lt;/h3&gt;&#xA;&lt;p&gt;Based on block oriented storage&lt;/p&gt;&#xA;&lt;p&gt;Slotted Page Array&#xA;Indexed Storage.      (Clustering)&#xA;LSM Trees&lt;/p&gt;&#xA;&lt;h3 id=&#34;column-store&#34;&gt;Column Store&lt;/h3&gt;&#xA;&lt;p&gt;Separate page per attribute&#xA;Attributes and meta-data stored in separate arrays of physical length&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning on Engineering Insights</title>
+    <title>Machine Learning on Engineer&#39;s Journal</title>
     <link>http://localhost:1313/categories/machine-learning/</link>
-    <description>Recent content in Machine Learning on Engineering Insights</description>
+    <description>Recent content in Machine Learning on Engineer&#39;s Journal</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Oct 2025 01:47:46 -0700</lastBuildDate>

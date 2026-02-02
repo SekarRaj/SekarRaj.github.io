@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Versioned State Machine - Engineer&#39;s Journal</title>
+    <meta name="description" content="The art of engineering">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        header {
+            border-bottom: 2px solid #4a5568;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        h1 {
+            color: #81c784;
+            margin: 0;
+            font-weight: 600;
+        }
+        h2, h3, h4, h5, h6 {
+            color: #a5d6a7;
+            font-weight: 500;
+        }
+        .subtitle {
+            color: #9e9e9e;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 1.5rem;
+        }
+        nav a {
+            color: #81c784;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            color: #a5d6a7;
+            border-bottom-color: #81c784;
+        }
+        main {
+            margin: 2rem 0;
+        }
+        .post-meta {
+            color: #9e9e9e;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-list li {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #242424;
+            transition: all 0.2s ease;
+        }
+        .post-list li:hover {
+            background-color: #2a2a2a;
+            border-color: #4a5568;
+        }
+        .post-title {
+            margin: 0 0 0.5rem 0;
+        }
+        .post-title a {
+            color: #81c784;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .post-title a:hover {
+            color: #a5d6a7;
+        }
+        footer {
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9e9e9e;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #81c784;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #a5d6a7;
+        }
+        code {
+            background-color: #2d2d2d;
+            color: #c9c9c9;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #c9c9c9;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #404040;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #81c784;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            color: #b0b0b0;
+            background-color: #242424;
+            padding: 1rem 1rem 1rem 1.5rem;
+            border-radius: 4px;
+        }
+        a {
+            color: #81c784;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #a5d6a7;
+        }
+         
+        p {
+            margin-bottom: 1.2rem;
+        }
+         
+        html {
+            scroll-behavior: smooth;
+        }
+         
+        a:focus, button:focus {
+            outline: 2px solid #81c784;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="http://localhost:1313/" style="color: inherit; text-decoration: none;">Engineer&#39;s Journal</a></h1>
+        
+        <p class="subtitle">The art of engineering</p>
+        
+        
+        <nav>
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/posts/">Posts</a></li>
+                
+                <li><a href="/categories/">Categories</a></li>
+                
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        
+<h1>The Versioned State Machine</h1>
+
+<div class="post-meta">
+    Published on January 30, 2026
+    
+    | Category: 
+    
+        
+        <a href="/categories/databases">Databases</a>
+    
+        , 
+        <a href="/categories/design">Design</a>
+    
+    
+    
+    | Tags: 
+    
+        
+        <a href="/tags/versioned-tables">versioned tables</a>
+    
+        , 
+        <a href="/tags/temporal-tables">temporal tables</a>
+    
+    
+</div>
+
+<div class="content">
+    <h2 id="the-versioned-state-machine">The Versioned State Machine</h2>
+<p>In a typical CRUD application, an update is a simple overwrite. But in high-compliance environments, an update is a journey. Recently, I tackled a requirement where a domain record governed by a state machine needed to maintain multiple versions simultaneously.</p>
+<p>The challenge arises when an update isn&rsquo;t immediately &ldquo;authoritative.&rdquo; Instead, the new version must navigate a series of states—often involving external system handshakes—before it can replace the previous version in the user&rsquo;s primary view.</p>
+<h3 id="the-constraints">The Constraints</h3>
+<p>Dual Visibility: The user must continue to see the &ldquo;Current Truth&rdquo; while a &ldquo;New Truth&rdquo; is being processed.</p>
+<p>Update Locking: To prevent race conditions and data corruption, no further modifications can be allowed while an update is pending.</p>
+<p>Strict Auditability: Every transition, even the failed intermediate ones, must be immutable and retrievable.</p>
+<h4 id="why-not-event-sourcing">Why Not Event Sourcing?</h4>
+<p>When auditability is a top priority, Event Sourcing is often the first suggestion. However, for many small-to-medium applications, the operational complexity and &ldquo;mental tax&rdquo; of event sourcing can outweigh the benefits.</p>
+<p>Instead, I implemented a pattern using Temporal Tables and Versioned Writes. This provides the &ldquo;time-travel&rdquo; capabilities of event sourcing with the simplicity of a relational model.</p>
+<h3 id="core-implementation-patterns">Core Implementation Patterns</h3>
+<h4 id="1-hexagonal-architecture-with-jmolecules">1. Hexagonal Architecture with jMolecules</h4>
+<p>To keep the domain logic pure and isolated from external API complexities (like EHR/EMR integrations), I used a Hexagonal (Ports &amp; Adapters) approach. jMolecules helps enforce these boundaries, ensuring the state machine logic doesn&rsquo;t leak into the persistence or web layers.</p>
+<h4 id="2-the-versioned-write-pattern">2. The Versioned Write Pattern</h4>
+<p>Instead of updating the existing row, we treat an update as a new record creation. This record &ldquo;navigates&rdquo; the state machine:</p>
+<p>Draft/Pending: The record is created and visible as &ldquo;In Progress.&rdquo;</p>
+<p>External Transition: Control passes to an external system (via a Transactional Outbox).</p>
+<p>Terminal State: Upon confirmation, the new record is marked as authoritative.</p>
+<h4 id="3-visibility-logic">3. Visibility Logic</h4>
+<p>The user view is managed by a specific query strategy:</p>
+<p>Active View: Fetch the latest record in a FINAL state.</p>
+<p>Pending View: Fetch any record in a TRANSITIONING state.</p>
+<p>UI Constraint: If a pending record exists, the UI disables &ldquo;Edit&rdquo; functionality and displays an &ldquo;Update in Progress&rdquo; banner.</p>
+<h3 id="practical-example-patient-information-management">Practical Example: Patient Information Management</h3>
+<p>Consider a system managing patient data that must be synchronized with an external Electronic Health Record (EHR).</p>
+<h4 id="data-model">Data Model</h4>
+<p>Patient: Profile Info.</p>
+<p>HealthScreening: Screening data.</p>
+<p>Medications: A set of medications.</p>
+<p>HealthReadings: Current vitals.</p>
+<h3 id="implementation">Implementation</h3>
+<h4 id="1-the-data-model--audit-layer">1. The Data Model &amp; Audit Layer</h4>
+<p>By combining Hibernate Envers with SQL Server Temporal Tables, we create a robust audit trail.</p>
+<p>Envers tracks the intent (application-level revisions).</p>
+<p>Temporal Tables track the state (database-level row history).</p>
+<h4 id="2-the-state-machine-flow">2. The State Machine Flow</h4>
+<p>Instead of updating the existing Patient record, we create a new version with a PENDING status.</p>
+<p>Transition 1 (Internal): The user submits info; the state moves to REVIEW_PENDING.</p>
+<p>Transition 2 (External): Control passes to the EHR system via a Transactional Outbox.</p>
+<p>Transition 3 (Terminal): Once the EHR confirms, the state hits FINAL, and this version becomes the new &ldquo;Authoritative&rdquo; record.</p>
+<h4 id="3-managing-the-user-interface">3. Managing the User Interface</h4>
+<p>The &ldquo;Visibility Constraint&rdquo; is handled at the query level. The UI fetches two distinct views:</p>
+<p>The Authoritative View: The latest record where Status = &lsquo;FINAL&rsquo;.</p>
+<p>The Progress Indicator: If a record exists where Status != &lsquo;FINAL&rsquo;, the UI flags the record as &ldquo;Read-Only&rdquo; and shows the pending changes.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Pattern</th>
+          <th>Role in the Solution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hexagonal Architecture</td>
+          <td>Keeps the complex EHR API logic (Adapters) away from the core Patient logic</td>
+      </tr>
+      <tr>
+          <td>Transactional Outbox</td>
+          <td>Ensures that state transitions and external API triggers stay atomic</td>
+      </tr>
+      <tr>
+          <td>Versioned Write</td>
+          <td>Prevents data loss by treating every update as a new entity until validated</td>
+      </tr>
+      <tr>
+          <td>Temporal Tables</td>
+          <td>Automatic database-level history without manual audit tables</td>
+      </tr>
+      <tr>
+          <td>State Machine</td>
+          <td>Explicitly defines the lifecycle of a versioned record</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Engineer&#39;s Journal. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+        
+        <p>Contact: <a href="mailto:sekar_raj@hotmail.com">sekar_raj@hotmail.com</a></p>
+        
+    </footer>
+</body>
+</html>

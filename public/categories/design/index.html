@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-<head>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.subtitle }}{{ end }}">
+    <title>Design - Engineer&#39;s Journal</title>
+    <meta name="description" content="The art of engineering">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -144,97 +144,79 @@
         a:hover {
             color: #a5d6a7;
         }
-        /* Better readability for paragraphs */
+         
         p {
             margin-bottom: 1.2rem;
         }
-        /* Smooth scrolling */
+         
         html {
             scroll-behavior: smooth;
         }
-        /* Focus states for accessibility */
+         
         a:focus, button:focus {
             outline: 2px solid #81c784;
             outline-offset: 2px;
-        }
-        /* Global Table Styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background-color: #242424;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #404040;
-        }
-        thead {
-            background-color: #2d3748;
-        }
-        th {
-            color: #81c784;
-            font-weight: 600;
-            text-align: left;
-            padding: 0.875rem 1rem;
-            border-bottom: 2px solid #4a5568;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #333;
-            color: #e0e0e0;
-            vertical-align: top;
-        }
-        tbody tr {
-            transition: background-color 0.2s ease;
-        }
-        tbody tr:hover {
-            background-color: #2a2a2a;
-        }
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-        /* Alternate row colors for better readability */
-        tbody tr:nth-child(even) {
-            background-color: #1e1e1e;
-        }
-        tbody tr:nth-child(even):hover {
-            background-color: #2a2a2a;
-        }
-        /* Responsive table wrapper */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><a href="{{ .Site.BaseURL }}" style="color: inherit; text-decoration: none;">{{ .Site.Title }}</a></h1>
-        {{ if .Site.Params.subtitle }}
-        <p class="subtitle">{{ .Site.Params.subtitle }}</p>
-        {{ end }}
-        {{ if .Site.Menus.main }}
+        <h1><a href="http://localhost:1313/" style="color: inherit; text-decoration: none;">Engineer&#39;s Journal</a></h1>
+        
+        <p class="subtitle">The art of engineering</p>
+        
+        
         <nav>
             <ul>
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/posts/">Posts</a></li>
+                
+                <li><a href="/categories/">Categories</a></li>
+                
             </ul>
         </nav>
-        {{ end }}
+        
     </header>
 
     <main>
-        {{ block "main" . }}{{ end }}
+        
+<h1>Design</h1>
+<p>All posts in the Design category:</p>
+
+<ul class="post-list">
+    
+    <li>
+        <h3 class="post-title"><a href="http://localhost:1313/posts/temporal_tables/">Versioned State Machine</a></h3>
+        <div class="post-meta">January 30, 2026
+            
+            | Tags: 
+            
+                
+                <a href="/tags/versioned-tables">versioned tables</a>
+            
+                , 
+                <a href="/tags/temporal-tables">temporal tables</a>
+            
+            
+        </div>
+        
+        <p><p>The Versioned State Machine</p>
+<p>In a typical CRUD application, an update is a simple overwrite. But in high-compliance environments, an update is a journey. Recently, I tackled a requirement where a domain record governed by a state machine needed to maintain multiple versions simultaneously.</p>
+<p>The challenge arises when an update isn&rsquo;t immediately &ldquo;authoritative.&rdquo; Instead, the new version must navigate a series of states—often involving external system handshakes—before it can replace the previous version in the user&rsquo;s primary view.</p></p>
+        
+    </li>
+    
+</ul>
+
     </main>
 
     <footer>
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-        {{ if .Site.Params.contact.email }}
-        <p>Contact: <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a></p>
-        {{ end }}
+        <p>&copy; 2026 Engineer&#39;s Journal. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+        
+        <p>Contact: <a href="mailto:sekar_raj@hotmail.com">sekar_raj@hotmail.com</a></p>
+        
     </footer>
 </body>
 </html>

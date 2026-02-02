@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-<head>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.subtitle }}{{ end }}">
+    <title>Storage models in database - Engineer&#39;s Journal</title>
+    <meta name="description" content="The art of engineering">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -144,97 +144,95 @@
         a:hover {
             color: #a5d6a7;
         }
-        /* Better readability for paragraphs */
+         
         p {
             margin-bottom: 1.2rem;
         }
-        /* Smooth scrolling */
+         
         html {
             scroll-behavior: smooth;
         }
-        /* Focus states for accessibility */
+         
         a:focus, button:focus {
             outline: 2px solid #81c784;
             outline-offset: 2px;
-        }
-        /* Global Table Styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background-color: #242424;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #404040;
-        }
-        thead {
-            background-color: #2d3748;
-        }
-        th {
-            color: #81c784;
-            font-weight: 600;
-            text-align: left;
-            padding: 0.875rem 1rem;
-            border-bottom: 2px solid #4a5568;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #333;
-            color: #e0e0e0;
-            vertical-align: top;
-        }
-        tbody tr {
-            transition: background-color 0.2s ease;
-        }
-        tbody tr:hover {
-            background-color: #2a2a2a;
-        }
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-        /* Alternate row colors for better readability */
-        tbody tr:nth-child(even) {
-            background-color: #1e1e1e;
-        }
-        tbody tr:nth-child(even):hover {
-            background-color: #2a2a2a;
-        }
-        /* Responsive table wrapper */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><a href="{{ .Site.BaseURL }}" style="color: inherit; text-decoration: none;">{{ .Site.Title }}</a></h1>
-        {{ if .Site.Params.subtitle }}
-        <p class="subtitle">{{ .Site.Params.subtitle }}</p>
-        {{ end }}
-        {{ if .Site.Menus.main }}
+        <h1><a href="http://localhost:1313/" style="color: inherit; text-decoration: none;">Engineer&#39;s Journal</a></h1>
+        
+        <p class="subtitle">The art of engineering</p>
+        
+        
         <nav>
             <ul>
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/posts/">Posts</a></li>
+                
+                <li><a href="/categories/">Categories</a></li>
+                
             </ul>
         </nav>
-        {{ end }}
+        
     </header>
 
     <main>
-        {{ block "main" . }}{{ end }}
+        
+<h1>Storage models in database</h1>
+
+<div class="post-meta">
+    Published on October 26, 2025
+    
+    | Category: 
+    
+        
+        <a href="/categories/databases">Databases</a>
+    
+    
+    
+    | Tags: 
+    
+        
+        <a href="/tags/database-storage-models">database-storage-models</a>
+    
+    
+</div>
+
+<div class="content">
+    <h3 id="database-storage-models">Database storage models</h3>
+<p>Depending on the type of access method, the database storage model could be one of the following.</p>
+<ul>
+<li>N-ary Storage Model (NSM) or Row storage</li>
+<li>Decomposition Storage Model (DSM) or Column storage</li>
+<li>Hybrid Storage Model (PAX) - Mix of Row and Storage</li>
+</ul>
+<h3 id="row-storage">Row Storage</h3>
+<p>Based on block oriented storage</p>
+<p>Slotted Page Array
+Indexed Storage.      (Clustering)
+LSM Trees</p>
+<h3 id="column-store">Column Store</h3>
+<p>Separate page per attribute
+Attributes and meta-data stored in separate arrays of physical length</p>
+<p>Identification of record has two options.</p>
+<p>Fixed length or embedded Ids (Not preferred)</p>
+<h3 id="partition-attributed-storage">Partition Attributed Storage</h3>
+<p>Vertically partition attributes within pages</p>
+<p>9698106549 Surya</p>
+
+</div>
+
     </main>
 
     <footer>
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-        {{ if .Site.Params.contact.email }}
-        <p>Contact: <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a></p>
-        {{ end }}
+        <p>&copy; 2026 Engineer&#39;s Journal. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+        
+        <p>Contact: <a href="mailto:sekar_raj@hotmail.com">sekar_raj@hotmail.com</a></p>
+        
     </footer>
 </body>
 </html>
