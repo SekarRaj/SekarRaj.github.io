@@ -52,13 +52,19 @@ UI Constraint: If a pending record exists, the UI disables "Edit" functionality 
 Consider a system managing patient data that must be synchronized with an external Electronic Health Record (EHR).
 
 #### Data Model
-Patient: Profile Info.
+The below relational model will be used to explain the problem.
 
-HealthScreening: Screening data.
+`Patient` Customer profile information
 
-Medications: A set of medications.
+`Medications` Master list of medications.
 
-HealthReadings: Current vitals.
+`Patient_Medications` Set of medications a patient is using.
+
+`Screenings` The screening date of the customer
+
+`Screening_Measure` The mesure of user vitals on a particular screening
+
+<img src="data_model.png" alt="Data Model" width="300">
 
 ### Implementation
 
