@@ -1,25 +1,40 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ if .Date }}
-<div class="post-meta">
-    Published on {{ .Date.Format "January 2, 2006" }}
-    {{ if .Params.categories }}
-    | Category: 
-    {{ range $index, $category := .Params.categories }}
-        {{ if $index }}, {{ end }}
-        <a href="/categories/{{ $category | urlize }}">{{ $category | title }}</a>
-    {{ end }}
-    {{ end }}
+<article>
+    <h1>{{ .Title }}</h1>
+    {{ if .Date }}
+    <div class="post-meta">
+        <span class="post-meta-item">
+            <span class="post-meta-icon">📅</span>
+            {{ .Date.Format "January 2, 2006" }}
+        </span>
+        <span class="reading-time">{{ math.Round (div (countwords .Content) 200.0) }} min read</span>
+        {{ if .Params.categories }}
+        <span class="post-meta-item">
+            {{ range .Params.categories }}
+            <a href="/categories/{{ . | urlize }}" class="category-badge">{{ . | title }}</a>
+            {{ end }}
+        </span>
+        {{ end }}
+    </div>
     {{ if .Params.tags }}
-    | Tags: 
-    {{ range $index, $tag := .Params.tags }}
-        {{ if $index }}, {{ end }}
-        <a href="/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+    <div class="tag-list">
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}" class="tag-badge">#{{ . }}</a>
+        {{ end }}
+    </div>
     {{ end }}
     {{ end }}
-</div>
-{{ end }}
-<div class="content">
-    {{ .Content }}
-</div>
+
+    {{/* Table of Contents */}}
+    {{ if .TableOfContents }}
+    <nav class="toc">
+        <div class="toc-title">📑 Table of Contents</div>
+        {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+
+    <div class="content">
+        {{ .Content }}
+    </div>
+</article>
 {{ end }}

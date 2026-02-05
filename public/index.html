@@ -31,6 +31,46 @@
             color: #a5d6a7;
             font-weight: 500;
         }
+         
+        .content h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4a5568;
+            position: relative;
+        }
+        .content h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            padding-left: 0.75rem;
+            border-left: 3px solid #81c784;
+        }
+        .content h4 {
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #90a4ae;
+            font-weight: 600;
+        }
+         
+        .heading-anchor {
+            opacity: 0;
+            margin-left: 0.5rem;
+            color: #81c784;
+            font-size: 0.8em;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+        }
+        .content h2:hover .heading-anchor,
+        .content h3:hover .heading-anchor,
+        .content h4:hover .heading-anchor {
+            opacity: 1;
+        }
+        .heading-anchor:hover {
+            color: #a5d6a7;
+        }
         .subtitle {
             color: #9e9e9e;
             font-style: italic;
@@ -63,7 +103,65 @@
         .post-meta {
             color: #9e9e9e;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 1rem;
+        }
+        .post-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .post-meta-icon {
+            color: #81c784;
+        }
+         
+        .reading-time {
+            background-color: #2d3748;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #a5d6a7;
+        }
+         
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        .tag-badge {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: #81c784;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid #4a5568;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .tag-badge:hover {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            color: #a5d6a7;
+            border-color: #81c784;
+            transform: translateY(-1px);
+        }
+        .category-badge {
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            color: #a5d6a7;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid #40916c;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .category-badge:hover {
+            background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+            transform: translateY(-1px);
         }
         .post-list {
             list-style: none;
@@ -158,6 +256,225 @@
             outline: 2px solid #81c784;
             outline-offset: 2px;
         }
+         
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .content ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .content ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #81c784;
+            font-weight: bold;
+        }
+        .content ol {
+            padding-left: 1.5rem;
+        }
+        .content ol li {
+            margin-bottom: 0.6rem;
+            padding-left: 0.5rem;
+        }
+        .content ol li::marker {
+            color: #81c784;
+            font-weight: 600;
+        }
+         
+        .callout {
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .callout-info {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-color: #38bdf8;
+        }
+        .callout-info .callout-title {
+            color: #38bdf8;
+        }
+        .callout-warning {
+            background-color: rgba(251, 191, 36, 0.1);
+            border-color: #fbbf24;
+        }
+        .callout-warning .callout-title {
+            color: #fbbf24;
+        }
+        .callout-tip {
+            background-color: rgba(129, 199, 132, 0.1);
+            border-color: #81c784;
+        }
+        .callout-tip .callout-title {
+            color: #81c784;
+        }
+        .callout-note {
+            background-color: rgba(167, 139, 250, 0.1);
+            border-color: #a78bfa;
+        }
+        .callout-note .callout-title {
+            color: #a78bfa;
+        }
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+         
+        .toc {
+            background-color: #242424;
+            border: 1px solid #404040;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+        .toc-title {
+            color: #81c784;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+         
+        .toc nav#TableOfContents {
+            margin: 0;
+        }
+        .toc nav#TableOfContents ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+        .toc nav#TableOfContents > ul > li {
+            padding: 0.3rem 0;
+            display: block;
+        }
+        .toc nav#TableOfContents li {
+            padding: 0.25rem 0;
+            display: block;
+        }
+        .toc nav#TableOfContents li::before {
+            display: none;
+        }
+        .toc nav#TableOfContents a {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: block;
+            text-decoration: none;
+        }
+        .toc nav#TableOfContents a:hover {
+            color: #81c784;
+            transform: translateX(4px);
+        }
+         
+        .toc nav#TableOfContents > ul > li > ul {
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        .toc nav#TableOfContents > ul > li > ul > li {
+            display: block;
+        }
+        .toc nav#TableOfContents > ul > li > ul > li > a {
+            font-size: 0.85rem;
+            color: #9e9e9e;
+        }
+         
+        .toc nav#TableOfContents > ul > li > ul > li > ul {
+            padding-left: 1rem;
+            margin-top: 0.2rem;
+            display: block;
+        }
+        .toc nav#TableOfContents > ul > li > ul > li > ul > li {
+            display: block;
+        }
+        .toc nav#TableOfContents > ul > li > ul > li > ul > li > a {
+            font-size: 0.8rem;
+            color: #888;
+        }
+         
+        .content hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #4a5568, transparent);
+            margin: 2.5rem 0;
+        }
+         
+        .content strong {
+            color: #a5d6a7;
+            font-weight: 600;
+        }
+         
+        .content mark {
+            background: linear-gradient(120deg, rgba(129, 199, 132, 0.3) 0%, rgba(129, 199, 132, 0.3) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: inherit;
+        }
+         
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: #242424;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #404040;
+        }
+        thead {
+            background-color: #2d3748;
+        }
+        th {
+            color: #81c784;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.875rem 1rem;
+            border-bottom: 2px solid #4a5568;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #333;
+            color: #e0e0e0;
+            vertical-align: top;
+        }
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        tbody tr:hover {
+            background-color: #2a2a2a;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+         
+        tbody tr:nth-child(even) {
+            background-color: #1e1e1e;
+        }
+        tbody tr:nth-child(even):hover {
+            background-color: #2a2a2a;
+        }
+         
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
     </style>
 </head>
 <body>
@@ -215,7 +532,7 @@
 <ul class="post-list">
     
     <li>
-        <h3 class="post-title"><a href="http://localhost:1313/posts/temporal_tables/">Versioned State Machine</a></h3>
+        <h3 class="post-title"><a href="http://localhost:1313/posts/versioned_state_machine/">The Versioned State Machine</a></h3>
         <div class="post-meta">
             January 30, 2026
             
@@ -240,7 +557,7 @@
             
         </div>
         
-        <p><p>The Versioned State Machine</p>
+        <p><h2 id="the-versioned-state-machine">The Versioned State Machine</h2>
 <p>In a typical CRUD application, an update is a simple overwrite. But in high-compliance environments, an update is a journey. Recently, I tackled a requirement where a domain record governed by a state machine needed to maintain multiple versions simultaneously.</p>
 <p>The challenge arises when an update isn&rsquo;t immediately &ldquo;authoritative.&rdquo; Instead, the new version must navigate a series of states—often involving external system handshakes—before it can replace the previous version in the user&rsquo;s primary view.</p></p>
         
