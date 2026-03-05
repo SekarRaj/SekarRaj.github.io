@@ -4,7 +4,7 @@ title: "Home"
 
 Welcome to **Engineer's Journel** - problems encountered architecting solutions! 
 
-I'm passionate about software engineering, technology innovation, and sharing knowledge with the developer community.
+I'm passionate about software engineering, innovation, and sharing knowledge with the developer community.
 
 ## About This Blog
 
